@@ -3,6 +3,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,10 +35,10 @@ public class Entidad {
     private Date fechaVinvulacion;
 
     @OneToMany(mappedBy="entidad")
-    private List<ResponsableEntidad> responsableEntidad;
+    private List<ResponsableEntidad> responsableEntidad = new ArrayList<>();
 
     @OneToMany(mappedBy="entidad")
-    private List<Proyecto> proyectos;
+    private List<Proyecto> proyectos = new ArrayList<>();
 
     public Entidad() {}
 

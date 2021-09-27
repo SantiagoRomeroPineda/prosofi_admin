@@ -16,8 +16,8 @@ public class ResponsableEntidad {
     @Column(name= "id_responsable_entidad")
     private Long idResponsableEntidad;
 
-    @Column(name= "documento_responsable", nullable = false)
-    private String documentoResponsable;
+    @Column(name= "documento", nullable = false)
+    private String documento;
 
     @Column(name= "nombre")
     private String nombre;

@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -32,4 +33,10 @@ public class Proyecto {
 
     @ManyToOne
     private Entidad entidad;
+
+    @OneToOne
+    private Involucrado lider;
+
+    @OneToMany(mappedBy="proyecto")
+    private Set<InvolucradoXProyecto> involucrados;
 }
