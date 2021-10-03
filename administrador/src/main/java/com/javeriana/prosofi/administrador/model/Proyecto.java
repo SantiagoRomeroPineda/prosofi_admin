@@ -39,4 +39,22 @@ public class Proyecto {
 
     @OneToMany(mappedBy="proyecto")
     private Set<InvolucradoXProyecto> involucrados;
+
+    @OneToMany(mappedBy = "proyecto")
+    private Set<DocenteEstudianteProyecto> esudianteDocente;
+
+    public Proyecto(Long idProyecto, String descripcion, String objetivos, Date fechaInicio, Date fechaFin, Entidad entidad, Involucrado lider, Set<InvolucradoXProyecto> involucrados, Set<DocenteEstudianteProyecto> esudianteDocente) {
+        this.idProyecto = idProyecto;
+        this.descripcion = descripcion;
+        this.objetivos = objetivos;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.entidad = entidad;
+        this.lider = lider;
+        this.involucrados = involucrados;
+        this.esudianteDocente = esudianteDocente;
+    }
+
+    public Proyecto() {
+    }
 }
