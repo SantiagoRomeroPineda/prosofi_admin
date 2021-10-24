@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Getter
 @Setter
@@ -32,6 +34,7 @@ public class ResponsableEntidad {
     private String correo;
 
     @ManyToOne
+    @JsonIgnore
     private Entidad entidad;
 
 }
