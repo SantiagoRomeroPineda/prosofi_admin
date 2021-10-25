@@ -1,6 +1,5 @@
 package com.javeriana.prosofi.administrador.model;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,28 +12,29 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Setter
 @Table(name = "responsable_entidad")
 public class ResponsableEntidad {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "id_responsable_entidad")
-    private Long idResponsableEntidad;
 
-    @Column(name= "documento", nullable = false)
-    private String documento;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_responsable_entidad")
+	private Long idResponsableEntidad;
 
-    @Column(name= "nombre")
-    private String nombre;
+	@Column(name = "documento", nullable = false)
+	private String documento;
 
-    @Column(name= "telefono")
-    private String telefono;
+	@Column(name = "nombre")
+	private String nombre;
 
-    @Column(name= "celular")
-    private String celular;
+	@Column(name = "telefono")
+	private String telefono;
 
-    @Column(name= "correo")
-    private String correo;
+	@Column(name = "celular")
+	private String celular;
 
-    @ManyToOne
-    @JsonIgnore
-    private Entidad entidad;
+	@Column(name = "correo")
+	private String correo;
+
+	@ManyToOne
+	@JsonIgnore
+	private Entidad entidad;
 
 }

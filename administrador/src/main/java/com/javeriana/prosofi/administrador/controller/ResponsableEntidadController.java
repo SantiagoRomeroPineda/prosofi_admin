@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.javeriana.prosofi.administrador.model.ResponsableEntidad;
 import com.javeriana.prosofi.administrador.service.ResponsableEntidadService;
+import com.sun.istack.NotNull;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -20,37 +21,40 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/responsableEntidad")
 public class ResponsableEntidadController {
 
-	private  ResponsableEntidadService responsableEntidadService;
+	private ResponsableEntidadService responsableEntidadService;
 
 	public ResponsableEntidadController(final ResponsableEntidadService responsableEntidadService) {
+
 		this.responsableEntidadService = responsableEntidadService;
 	}
 
 	@PostMapping("/addResponsable")
-	public ResponseEntity<ResponsableEntidad> addResponsable(@RequestBody ResponsableEntidad responsableEntidad){
+	public ResponseEntity<ResponsableEntidad> addResponsable(@NotNull @RequestBody ResponsableEntidad responsableEntidad) {
+
 		ResponsableEntidad newResponsableEntidad = responsableEntidadService.addResponsableEntidad(responsableEntidad);
 		return new ResponseEntity<ResponsableEntidad>(newResponsableEntidad, HttpStatus.OK);
 	}
 
 	@GetMapping("/findAllResponsables")
-	public ResponseEntity<List<ResponsableEntidad>> findAllResponsables(){
+	public ResponseEntity<List<ResponsableEntidad>> findAllResponsables() {
+
 		List<ResponsableEntidad> responsables = responsableEntidadService.finaAllResponsables();
 		return new ResponseEntity<List<ResponsableEntidad>>(responsables, HttpStatus.OK);
 	}
 
 	@GetMapping("/findResponsableById/{id}")
-	public ResponseEntity<ResponsableEntidad> findById(@PathVariable Long id){
+	public ResponseEntity<ResponsableEntidad> findById(@NotNull @PathVariable Long id) {
+
 		ResponsableEntidad responsables = responsableEntidadService.findResponsableEntidad(id).orElse(null);
 		return new ResponseEntity<ResponsableEntidad>(responsables, HttpStatus.OK);
 	}
 
 	@PutMapping("/updateResponsable/{id}")
-	public ResponseEntity<ResponsableEntidad> updatateById(@PathVariable Long id, @RequestBody ResponsableEntidad responsableEntidad){
-		ResponsableEntidad responsable= responsableEntidadService.updateResponsableEntidad(responsableEntidad, id);
+	public ResponseEntity<ResponsableEntidad> updatateById(@NotNull @PathVariable Long id,
+														   @NotNull @RequestBody ResponsableEntidad responsableEntidad) {
+
+		ResponsableEntidad responsable = responsableEntidadService.updateResponsableEntidad(responsableEntidad, id);
 		return new ResponseEntity<ResponsableEntidad>(responsable, HttpStatus.OK);
 	}
-
-
-
 
 }
