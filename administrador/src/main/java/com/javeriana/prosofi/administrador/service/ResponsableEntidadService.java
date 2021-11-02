@@ -39,4 +39,4 @@ public class ResponsableEntidadService {
 		return responsableEntidadRepository.findAll();
 	}
 
-	}
+}

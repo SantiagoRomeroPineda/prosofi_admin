@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Getter
@@ -32,12 +33,14 @@ public class Entidad {
 
     @Column(name= "fecha_vinculacion")
     @CreationTimestamp
-    private Date fechaVinvulacion;
+    private Date fechaVinculacion;
 
     @OneToMany(mappedBy="entidad")
+    @JsonIgnore
     private List<ResponsableEntidad> responsableEntidad = new ArrayList<>();
 
     @OneToMany(mappedBy="entidad")
+    @JsonIgnore
     private List<Proyecto> proyectos = new ArrayList<>();
 
     public Entidad() {}

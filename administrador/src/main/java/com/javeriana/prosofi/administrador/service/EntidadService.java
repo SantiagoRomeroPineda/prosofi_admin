@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import com.javeriana.prosofi.administrador.model.Entidad;
-import com.javeriana.prosofi.administrador.model.ResponsableEntidad;
 import com.javeriana.prosofi.administrador.repository.EntidadRepository;
 import lombok.extern.slf4j.Slf4j;
 

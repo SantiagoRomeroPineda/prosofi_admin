@@ -34,7 +34,6 @@ public class ResponsableEntidad {
 	private String correo;
 
 	@ManyToOne
-	@JsonIgnore
 	private Entidad entidad;
 
 }
