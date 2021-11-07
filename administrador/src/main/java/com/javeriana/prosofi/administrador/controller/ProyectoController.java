@@ -37,7 +37,7 @@ public class ProyectoController {
 		return new ResponseEntity<Proyecto>(newProyecto, HttpStatus.OK);
 	}
 
-	@GetMapping("/findAlProyectos")
+	@GetMapping("/findAllProyectos")
 	public ResponseEntity<List<Proyecto>> findAllProyectos() {
 
 		List<Proyecto> proyectos = proyectoService.finaAllProyectos();

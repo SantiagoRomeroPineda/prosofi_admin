@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.javeriana.prosofi.administrador.model.Becario;
 
 @Repository
-public interface BecarioRepository extends JpaRepository<Becario, Long> {
+public interface BecarioRepository extends InvolucradoRepository {
 
 }

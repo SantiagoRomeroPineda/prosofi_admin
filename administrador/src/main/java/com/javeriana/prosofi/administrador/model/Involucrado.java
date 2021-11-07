@@ -7,6 +7,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Getter
 @Setter
@@ -33,6 +35,7 @@ public class Involucrado {
     @Column(name= "correo_externo")
     private String correoExterno;
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     @Column(name= "fecha_nacimiento")
     private Date fechaNacimiento;
 
