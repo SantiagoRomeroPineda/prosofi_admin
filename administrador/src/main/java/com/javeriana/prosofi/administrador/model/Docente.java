@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import java.util.Date;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Getter
 @Setter
@@ -19,6 +21,7 @@ public class Docente extends Involucrado {
     private String facultad;
 
     @OneToMany(mappedBy = "docente")
+    @JsonIgnore
     private Set<DocenteEstudianteProyecto> estudianteProyecto;
 
     public Docente() {

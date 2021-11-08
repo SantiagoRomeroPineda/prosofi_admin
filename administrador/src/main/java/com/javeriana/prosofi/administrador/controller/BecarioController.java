@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.javeriana.prosofi.administrador.model.Becario;
 import com.javeriana.prosofi.administrador.model.Involucrado;
 import com.javeriana.prosofi.administrador.service.BecarioService;
+import com.javeriana.prosofi.administrador.service.InvolucradoXProyectoService;
 import com.sun.istack.NotNull;
 import lombok.extern.slf4j.Slf4j;
 

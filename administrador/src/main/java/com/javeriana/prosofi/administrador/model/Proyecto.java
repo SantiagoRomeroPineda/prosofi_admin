@@ -40,9 +40,11 @@ public class Proyecto {
     private Involucrado lider;
 
     @OneToMany(mappedBy="proyecto")
+    @JsonIgnore
     private Set<InvolucradoXProyecto> involucrados;
 
     @OneToMany(mappedBy = "proyecto")
+    @JsonIgnore
     private Set<DocenteEstudianteProyecto> esudianteDocente;
 
     public Proyecto(Long idProyecto, String descripcion, String objetivos, Date fechaInicio, Date fechaFin, Entidad entidad, Involucrado lider, Set<InvolucradoXProyecto> involucrados, Set<DocenteEstudianteProyecto> esudianteDocente) {

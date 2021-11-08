@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-import com.javeriana.prosofi.administrador.model.Involucrado;
 import com.javeriana.prosofi.administrador.model.InvolucradoXProyecto;
 import com.javeriana.prosofi.administrador.repository.InvolucradoXProyectoRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -40,4 +39,13 @@ public class InvolucradoXProyectoService {
 	public List<InvolucradoXProyecto> finaAllInvolucradoXProyectos(){
 		return involucradoXProyectoRepository.findAll();
 	}
+
+	public List<InvolucradoXProyecto> findByInvolucradoId(Long id){
+		return involucradoXProyectoRepository.findByInvolucradoId(id);
+	}
+
+	public List<InvolucradoXProyecto> findByProyectoId(Long id){
+		return involucradoXProyectoRepository.findByProyectoId(id);
+	}
+
 }

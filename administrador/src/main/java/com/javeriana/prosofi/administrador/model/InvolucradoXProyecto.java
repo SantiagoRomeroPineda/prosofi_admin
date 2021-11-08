@@ -27,7 +27,7 @@ public class InvolucradoXProyecto {
 
 
     public enum FormaVinculacion {
-        CLASE, TESIS, PROYECTO_SOCIAL
+        CLASE, TESIS, PROYECTO_SOCIAL, VOLUNTARIO
     }
 
 

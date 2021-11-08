@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.javeriana.prosofi.administrador.model.Voluntario;
 import com.javeriana.prosofi.administrador.model.VoluntarioExterno;
 import com.javeriana.prosofi.administrador.service.VoluntarioExternoService;
-import com.javeriana.prosofi.administrador.service.VoluntarioService;
 import com.sun.istack.NotNull;
 import lombok.extern.slf4j.Slf4j;
 
@@ -51,7 +49,7 @@ public class VoluntarioExternoController {
 		return new ResponseEntity<VoluntarioExterno>(voluntarioExterno, HttpStatus.OK);
 	}
 
-	@PutMapping("/updateVoluntario/{id}")
+	@PutMapping("/updateVoluntarioExterno/{id}")
 	public ResponseEntity<VoluntarioExterno> updatateById(@NotNull @PathVariable Long id,
 												   @NotNull @RequestBody VoluntarioExterno voluntarioExterno) {
 

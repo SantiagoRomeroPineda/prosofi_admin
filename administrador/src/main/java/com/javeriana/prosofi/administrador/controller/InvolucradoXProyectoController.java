@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import com.javeriana.prosofi.administrador.model.Becario;
-import com.javeriana.prosofi.administrador.model.Involucrado;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import com.javeriana.prosofi.administrador.model.InvolucradoXProyecto;
-import com.javeriana.prosofi.administrador.service.BecarioService;
 import com.javeriana.prosofi.administrador.service.InvolucradoXProyectoService;
 import com.sun.istack.NotNull;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
+@RestController
+@RequestMapping("/involucradoXProyecto")
 public class InvolucradoXProyectoController {
 
 
@@ -36,8 +39,8 @@ public class InvolucradoXProyectoController {
 	@GetMapping("/findAllInvolucradosXProyecto")
 	public ResponseEntity<List<InvolucradoXProyecto>> findAll() {
 
-		List<InvolucradoXProyecto> becarios = involucradoXProyectoService.finaAllInvolucradoXProyectos();
-		return new ResponseEntity<List<InvolucradoXProyecto>>(becarios, HttpStatus.OK);
+		List<InvolucradoXProyecto> involucradosXProyecto = involucradoXProyectoService.finaAllInvolucradoXProyectos();
+		return new ResponseEntity<List<InvolucradoXProyecto>>(involucradosXProyecto, HttpStatus.OK);
 	}
 
 	@GetMapping("/findInvolucradoXProyectoById/{id}")
@@ -53,6 +56,20 @@ public class InvolucradoXProyectoController {
 
 		InvolucradoXProyecto newInvolucradoXProyecto = involucradoXProyectoService.updateInvolucradoXProyecto(involucradoXProyecto, id);
 		return new ResponseEntity<InvolucradoXProyecto>(newInvolucradoXProyecto, HttpStatus.OK);
+	}
+
+	@GetMapping("/findInvolucradoXProyectoByInvolucradoId/{id}")
+	public ResponseEntity<List<InvolucradoXProyecto>> findByInvolucradoId(@NotNull @PathVariable Long id) {
+
+		List<InvolucradoXProyecto> involucradosXProyecto =  involucradoXProyectoService.findByInvolucradoId(id);
+		return new ResponseEntity<List<InvolucradoXProyecto>>(involucradosXProyecto, HttpStatus.OK);
+	}
+
+	@GetMapping("/findInvolucradoXProyectoByProyectoId/{id}")
+	public ResponseEntity<List<InvolucradoXProyecto>> findByProyectoId(@NotNull @PathVariable Long id) {
+
+		List<InvolucradoXProyecto> involucradosXProyecto =  involucradoXProyectoService.findByProyectoId(id);
+		return new ResponseEntity<List<InvolucradoXProyecto>>(involucradosXProyecto, HttpStatus.OK);
 	}
 
 }

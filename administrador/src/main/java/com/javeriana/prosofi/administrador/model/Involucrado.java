@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Getter
@@ -39,8 +40,8 @@ public class Involucrado {
     @Column(name= "fecha_nacimiento")
     private Date fechaNacimiento;
 
-
     @OneToMany(mappedBy = "involucrado")
+    @JsonIgnore
     private Set<InvolucradoXProyecto> proyectos;
 
     public Involucrado() {

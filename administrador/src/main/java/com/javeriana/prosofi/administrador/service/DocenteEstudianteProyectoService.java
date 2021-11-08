@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import com.javeriana.prosofi.administrador.model.DocenteEstudianteProyecto;
+import com.javeriana.prosofi.administrador.model.InvolucradoXProyecto;
 import com.javeriana.prosofi.administrador.repository.DocenteEstudianteProyectoRepository;
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,5 +39,17 @@ public class DocenteEstudianteProyectoService {
 
 	public List<DocenteEstudianteProyecto> finaAllDocenteEstudianteProyecto(){
 		return repository.findAll();
+	}
+
+	public List<DocenteEstudianteProyecto> findByProyectoId(Long id){
+		return repository.findByProyectoId(id);
+	}
+
+	public List<DocenteEstudianteProyecto> findByDocenteId(Long id){
+		return repository.findByDocenteId(id);
+	}
+
+	public List<DocenteEstudianteProyecto> findByEstudianteId(Long id){
+		return repository.findByEstudianteId(id);
 	}
 }
