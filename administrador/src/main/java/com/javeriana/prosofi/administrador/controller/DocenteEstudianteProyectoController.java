@@ -79,4 +79,11 @@ public class DocenteEstudianteProyectoController {
 		List<DocenteEstudianteProyecto> docenteEstudianteProyecto =  service.findByEstudianteId(id);
 		return new ResponseEntity<List<DocenteEstudianteProyecto>>(docenteEstudianteProyecto, HttpStatus.OK);
 	}
+
+	@GetMapping("/findEstudiateDocenteByPeriodo/{periodo}")
+	public ResponseEntity<List<DocenteEstudianteProyecto>> findByPeriodo(@NotNull @PathVariable String periodo) {
+
+		List<DocenteEstudianteProyecto> docenteEstudianteProyecto =  service.findByPeriodo(periodo);
+		return new ResponseEntity<List<DocenteEstudianteProyecto>>(docenteEstudianteProyecto, HttpStatus.OK);
+	}
 }

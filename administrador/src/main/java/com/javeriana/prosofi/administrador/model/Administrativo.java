@@ -16,9 +16,17 @@ public class Administrativo extends Involucrado {
     @Column(name= "cargo")
     private String cargo;
 
-    public Administrativo(Long idInvolucrado, String documento, String nombre, String telefono, String celular, String correoExterno, Set<InvolucradoXProyecto> proyectos, Date fechaNacimiento, String cargo){
+    @Column(name= "correo_institucional")
+    private String correoinstitucional;
+
+    public Administrativo(final Long idInvolucrado, final String documento, final String nombre, final String telefono,
+                          final String celular, final String correoExterno,
+                          final Set<InvolucradoXProyecto> proyectos, final Date fechaNacimiento, final String cargo,
+                          final String correoinstitucional) {
+
         super(idInvolucrado, documento, nombre, telefono, celular, correoExterno, proyectos, fechaNacimiento);
         this.cargo = cargo;
+        this.correoinstitucional = correoinstitucional;
     }
 
     public Administrativo() {

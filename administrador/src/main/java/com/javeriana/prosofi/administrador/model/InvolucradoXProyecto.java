@@ -22,13 +22,8 @@ public class InvolucradoXProyecto {
     @JoinColumn(name = "involucrado")
     private Involucrado involucrado;
 
-    @Column(name= "forma_vinculacion", nullable = false, columnDefinition = "varchar(32) default 'CLASE'")
-    private FormaVinculacion formaVinculacion;
-
-
-    public enum FormaVinculacion {
-        CLASE, TESIS, PROYECTO_SOCIAL, VOLUNTARIO
-    }
+    @Column(name= "forma_vinculacion")
+    private String formaVinculacion;
 
 
 }

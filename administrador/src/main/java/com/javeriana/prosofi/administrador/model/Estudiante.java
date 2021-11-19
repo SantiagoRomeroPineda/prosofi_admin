@@ -21,20 +21,29 @@ public class Estudiante extends Involucrado{
     @Column(name= "facultad")
     private String facultad;
 
-    @Column(name= "carrera")
-    private String carrera;
+    @Column(name= "programa")
+    private String programa;
 
     @OneToMany(mappedBy = "estudiante")
     @JsonIgnore
     private Set<DocenteEstudianteProyecto> proyectoDocente;
 
+    @Column(name= "correo_institucional")
+    private String correoinstitucional;
+
+    public Estudiante(final Long idInvolucrado, final String documento, final String nombre, final String telefono, final String celular,
+                      final String correoExterno,
+                      final Set<InvolucradoXProyecto> proyectos, final Date fechaNacimiento, final String facultad, final String programa,
+                      final Set<DocenteEstudianteProyecto> proyectoDocente, final String correoinstitucional) {
+
+        super(idInvolucrado, documento, nombre, telefono, celular, correoExterno, proyectos, fechaNacimiento);
+        this.facultad = facultad;
+        this.programa = programa;
+        this.proyectoDocente = proyectoDocente;
+        this.correoinstitucional = correoinstitucional;
+    }
+
     public Estudiante() {
     }
 
-    public Estudiante(Long idInvolucrado, String documento, String nombre, String telefono, String celular, String correoExterno, Set<InvolucradoXProyecto> proyectos, Date fechaNacimiento, String facultad, String carrera, Set<DocenteEstudianteProyecto> proyectoDocente) {
-        super(idInvolucrado, documento, nombre, telefono, celular, correoExterno, proyectos, fechaNacimiento);
-        this.facultad = facultad;
-        this.carrera = carrera;
-        this.proyectoDocente = proyectoDocente;
-    }
 }

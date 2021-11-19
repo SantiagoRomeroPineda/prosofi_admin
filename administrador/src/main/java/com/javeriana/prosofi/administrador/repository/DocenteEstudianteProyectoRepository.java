@@ -19,4 +19,7 @@ public interface DocenteEstudianteProyectoRepository extends JpaRepository<Docen
 
 	@Query(value = "SELECT * FROM DOCENTE_ESTUDIANTE_PROYECTO where docente = ?1", nativeQuery = true)
 	List<DocenteEstudianteProyecto> findByDocenteId(Long docenteId);
+
+	@Query(value = "SELECT * FROM DOCENTE_ESTUDIANTE_PROYECTO where periodo_academico = ?1", nativeQuery = true)
+	List<DocenteEstudianteProyecto> findByPeriodo(String periodo);
 }

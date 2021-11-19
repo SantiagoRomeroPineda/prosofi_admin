@@ -52,4 +52,8 @@ public class DocenteEstudianteProyectoService {
 	public List<DocenteEstudianteProyecto> findByEstudianteId(Long id){
 		return repository.findByEstudianteId(id);
 	}
+
+	public List<DocenteEstudianteProyecto> findByPeriodo(String periodo){
+		return repository.findByPeriodo(periodo);
+	}
 }

@@ -24,12 +24,22 @@ public class Docente extends Involucrado {
     @JsonIgnore
     private Set<DocenteEstudianteProyecto> estudianteProyecto;
 
+    @Column(name= "correo_institucional")
+    private String correoinstitucional;
+
+
     public Docente() {
     }
 
-    public Docente(Long idInvolucrado, String documento, String nombre, String telefono, String celular, String correoExterno, Set<InvolucradoXProyecto> proyectos, Date fechaNacimiento, String facultad, Set<DocenteEstudianteProyecto> estudianteProyecto) {
+
+    public Docente(final Long idInvolucrado, final String documento, final String nombre, final String telefono, final String celular,
+                   final String correoExterno,
+                   final Set<InvolucradoXProyecto> proyectos, final Date fechaNacimiento, final String facultad,
+                   final Set<DocenteEstudianteProyecto> estudianteProyecto, final String correoinstitucional) {
+
         super(idInvolucrado, documento, nombre, telefono, celular, correoExterno, proyectos, fechaNacimiento);
         this.facultad = facultad;
         this.estudianteProyecto = estudianteProyecto;
+        this.correoinstitucional = correoinstitucional;
     }
 }
